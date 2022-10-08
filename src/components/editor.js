@@ -2,6 +2,7 @@ import { Component } from "react";
 import Personal from "./editorComponents/personal";
 import Works from "./editorComponents/work";
 import Edu from "./editorComponents/edu";
+import "../style.css";
 
 export default class Editor extends Component {
   constructor(props) {

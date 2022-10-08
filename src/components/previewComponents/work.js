@@ -4,7 +4,7 @@ import { OutputComponentDiv, OutputComponentSpan } from "./outputComponent";
 export default class Works extends Component {
   render() {
     return (
-      <div className="workView">
+      <div className="detailsView">
         <hr/>
         <h1>Work Experience</h1>
         {this.props.details.map((f) => (
@@ -19,10 +19,10 @@ class WorkComponent extends Component {
   render() {
     let fields = this.props.details;
     return (
-      <div className="work">
-        <div className="workBroad">
+      <div className="details">
+        <div className="detailsBroad">
           <OutputComponentSpan data={fields.position} />
-          <div className="workDetails">
+          <div className="detailsDetails">
             <OutputComponentSpan data={fields.company} /> {" | "}
             <OutputComponentSpan data={fields.start} /> {" - "}
             <OutputComponentSpan data={fields.end} />

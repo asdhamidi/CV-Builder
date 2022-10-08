@@ -7,12 +7,12 @@ class App extends Component {
     super(props);
     this.state = {
       personal: {
-        name: "",
-        shortIntro: "",
-        phone: "",
-        email: "",
-        location: "",
-        desc: "",
+        name: "Name Surname",
+        shortIntro: "Short Intro",
+        phone: "+91 9876543210",
+        email: "email@lmaomail.com",
+        location: "Place, BiggerPlace",
+        desc: "A longer description where you brag about your skills and sprinkle lies, as per taste.",
       },
       work: [],
       edu: [],

@@ -36,10 +36,10 @@ export default class Works extends Component {
 
   render() {
     return (
-      <div className="works">
+      <div className="work">
         <h1>Work Experience</h1>
         {this.state.renders}
-        <button onClick={this.addField}>Add</button>
+        <button className="addButton" onClick={this.addField}>Add</button>
       </div>
     );
   }
@@ -99,7 +99,7 @@ class WorkComponent extends Component {
           PH="Description"
           type="text"
         />
-        <button onClick={() => this.props.delete(this.props.ID)}>Delete</button>
+        <button className="deleteButton" onClick={() => this.props.delete(this.props.ID)}>Delete</button>
       </form>
     );
   }
