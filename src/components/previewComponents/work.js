@@ -1,35 +1,32 @@
-import { Component } from "react";
-import { OutputComponentDiv, OutputComponentSpan } from "./outputComponent";
+import { React } from "react";
+import { OutputComponentSpan, OutputComponentDiv } from "./outputComponent";
+import uniqid from "uniqid";
 
-export default class Works extends Component {
-  render() {
-    return (
-      <div className="detailsView">
-        <hr/>
-        <h1>Work Experience</h1>
-        {this.props.details.map((f) => (
-          <WorkComponent details={f} />
-        ))}
-      </div>
-    );
-  }
+export default function Work(props) {
+  return (
+    <div className="detailsView">
+      <h1 className="heading">Work</h1>
+      {props.details.map((f) => (
+        <WorkComponent details={f} key={uniqid()} />
+      ))}
+    </div>
+  );
 }
 
-class WorkComponent extends Component {
-  render() {
-    let fields = this.props.details;
-    return (
-      <div className="details">
-        <div className="detailsBroad">
-          <OutputComponentSpan data={fields.position} />
-          <div className="detailsDetails">
-            <OutputComponentSpan data={fields.company} /> {" | "}
-            <OutputComponentSpan data={fields.start} /> {" - "}
-            <OutputComponentSpan data={fields.end} />
-          </div>
+function WorkComponent(props) {
+  return (
+    <div className="details">
+      <div className="detailsBroad">
+        <div className="detailsMain">
+          <OutputComponentSpan data={props.details.position} />
+          <OutputComponentSpan data={props.details.company} />
         </div>
-        <OutputComponentDiv data={fields.desc} cls="workDesc" />
+        <div className="detailsDetails">
+          <OutputComponentSpan data={props.details.start} /> {" - "}
+          <OutputComponentSpan data={props.details.end} />
+        </div>
       </div>
-    );
-  }
+      <OutputComponentDiv data={props.details.desc} cls="detailsDesc" />
+    </div>
+  );
 }

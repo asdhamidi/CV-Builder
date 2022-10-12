@@ -1,19 +1,52 @@
-import { Component } from "react";
 import InputComponent from "./inputComponent";
+import React from "react";
 
-export default class Personal extends Component {
-  render() {
-    return (
-      <div className="personal">
-        <h1>Personal Details</h1>
-        <InputComponent update={this.props.update} details={this.props.details} field="name" PH="Name" type="text"/>
-        <InputComponent update={this.props.update} details={this.props.details} field="shortIntro" PH="Short Intro" type="text"/>
-        <InputComponent update={this.props.update} details={this.props.details} field="email" PH="Email" type="email"/>
-        <InputComponent update={this.props.update} details={this.props.details} field="phone" PH="Contact" type="number"/>
-        <InputComponent update={this.props.update} details={this.props.details} field="location" PH="Location" type="text"/>
-        <InputComponent update={this.props.update} details={this.props.details} field="desc" PH="Description" type="text"/>
-      </div>
-    );
-  }
+export default function Personal(props) {
+  return (
+    <div className="personal">
+      <h1>Personal Details</h1>
+      <InputComponent
+        update={props.update}
+        details={props.details}
+        field="name"
+        PH="Name"
+        type="text"
+      />
+      <InputComponent
+        update={props.update}
+        details={props.details}
+        field="shortIntro"
+        PH="Short Intro"
+        type="text"
+      />
+      <InputComponent
+        update={props.update}
+        details={props.details}
+        field="email"
+        PH="Email"
+        type="email"
+      />
+      <InputComponent
+        update={props.update}
+        details={props.details}
+        field="phone"
+        PH="Contact"
+        type="text"
+      />
+      <InputComponent
+        update={props.update}
+        details={props.details}
+        field="location"
+        PH="Location"
+        type="text"
+      />
+      <InputComponent
+        update={props.update}
+        details={props.details}
+        field="desc"
+        PH="Description"
+        type="text"
+      />
+    </div>
+  );
 }
-

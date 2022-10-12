@@ -37,7 +37,7 @@ export default class Edu extends Component {
   render() {
     return (
       <div className="edu">
-        <h1>Work Experience</h1>
+        <h1>Education</h1>
         {this.state.renders}
         <button className="addButton"  onClick={this.addField}>Add</button>
       </div>

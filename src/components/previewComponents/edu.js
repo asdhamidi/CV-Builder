@@ -1,34 +1,31 @@
-import { Component } from "react";
+import { React } from "react";
 import { OutputComponentSpan } from "./outputComponent";
+import uniqid from "uniqid";
 
-export default class Edy extends Component {
-  render() {
-    return (
-      <div className="detailsView">
-        <hr/>
-        <h1>Education</h1>
-        {this.props.details.map((f) => (
-          <EduComponent details={f} />
-        ))}
-      </div>
-    );
-  }
+export default function Edu(props) {
+  return (
+    <div className="detailsView">
+      <h1 className="heading">Education</h1>
+      {props.details.map((f) => (
+        <EduComponent details={f} key={uniqid()} />
+      ))}
+    </div>
+  );
 }
 
-class EduComponent extends Component {
-  render() {
-    let fields = this.props.details;
-    return (
-      <div className="details">
-        <div className="detailsBroad">
-          <OutputComponentSpan data={fields.course} />
-          <div className="detailsDetails">
-            <OutputComponentSpan data={fields.institute} /> {" | "}
-            <OutputComponentSpan data={fields.start} /> {" - "}
-            <OutputComponentSpan data={fields.end} />
-          </div>
+function EduComponent(props) {
+  return (
+    <div className="details">
+      <div className="detailsBroad">
+        <div className="detailsMain">
+          <OutputComponentSpan data={props.details.course} />
+          <OutputComponentSpan data={props.details.institute} />
+        </div>
+        <div className="detailsDetails">
+          <OutputComponentSpan data={props.details.start} /> {" - "}
+          <OutputComponentSpan data={props.details.end} />
         </div>
       </div>
-    );
-  }
+    </div>
+  );
 }
