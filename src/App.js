@@ -29,7 +29,7 @@ export default function App() {
         <Editor update={update} details={data}></Editor>
         <Preview details={data}></Preview>
       </main>
-      <ColorChanger/>
+      <ColorChanger />
     </div>
   );
 }

@@ -5,7 +5,7 @@ import uniqid from "uniqid";
 export default function Work(props) {
   return (
     <div className="detailsView">
-      <h1 className="heading">Work</h1>
+      {props.length > 0 && <h1 className="heading">Work</h1>}
       {props.details.map((f) => (
         <WorkComponent details={f} key={uniqid()} />
       ))}
