@@ -1,7 +1,7 @@
 body {
   margin: 0;
   font-family: Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
-  background-color: #CCE;
+  background-color: #cce;
 }
 
 * {
@@ -72,13 +72,13 @@ main {
   flex: 1;
   max-height: 90vh;
   transition: all ease-in-out 500ms;
-}
-
-.editor {
   box-sizing: border-box;
   justify-content: baseline;
   background-color: white;
   overflow-y: scroll;
+}
+
+.editor {
 }
 
 .preview {
@@ -106,6 +106,14 @@ button {
   opacity: 0.8;
 }
 
+input:active, input:focus {
+  color: black;
+}
+
+button {
+  padding: 0.25rem;
+}
+
 input:hover {
   opacity: 1;
 }
@@ -129,6 +137,10 @@ input:hover {
   flex-direction: column;
   gap: 0.5rem;
   width: 100%;
+}
+
+.detailsView {
+  margin: 0.5rem 0;
 }
 
 .heading,
@@ -196,7 +208,7 @@ input:hover {
   flex-direction: column;
 }
 
-.detailsMain span:first-of-type {
+.detailsMain span:first-of-type, .projectsMain span:first-of-type {
   font-weight: 600;
   font-size: 1.1rem;
 }
@@ -306,4 +318,39 @@ input:hover {
 }
 .colorBox:nth-of-type(5) {
   background-color: mediumslateblue;
+}
+
+.stacks {
+  background-color: #CCC;
+  padding: 0.25rem;
+  border-radius: 0.25rem;
+  margin: 0.25rem;
+  width: min-content;
+  display: inline;
+  font-size: 0.75rem;
+  text-align: center;
+}
+
+.stack::before {
+  content: "Tech Stack:";
+  display: block;
+  font-size: 0.75rem;
+  color: var(--base-resume-color);
+  font-style: italic;
+  margin: 0.5rem 0;
+}
+
+.skills div {
+  font-size: 1rem;
+  font-weight: 300;
+  display: inline;
+}
+
+.skills span {
+  font-size: 0.9rem;
+  font-weight: 400;
+  background-color: #CCC;
+  margin: 0.1rem;
+  padding: 0.25rem;
+  border-radius: 0.25rem;
 }

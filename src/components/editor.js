@@ -2,7 +2,9 @@ import React from "react";
 import Personal from "./editorComponents/personal";
 import Work from "./editorComponents/work";
 import Edu from "./editorComponents/edu";
+import Projects from "./editorComponents/projects";
 import "../style.css";
+import Skills from "./editorComponents/skills";
 
 export default function Editor(props) {
   function personalUpdate(newState) {
@@ -55,11 +57,40 @@ export default function Editor(props) {
     });
   }
 
+  function projectsUpdate(item) {
+    let newItem = true;
+
+    props.details.projects = props.details.projects.map((proj) => {
+      if (proj.ID === item.ID) {
+        newItem = false;
+        return item;
+      } else return proj;
+    });
+
+    if (newItem) {
+      props.details.projects = props.details.projects.concat(item);
+    }
+
+    props.update({ projects: props.details.projects });
+  }
+
+  function projectDelete(ID) {
+    props.update({
+      projects: props.details.projects.filter((project) => project.ID !== ID),
+    });
+  }
+
+  function updateSkills(skillList) {
+    props.update({skills: skillList})
+  }
+
   return (
     <div className="editor">
       <Personal update={personalUpdate} details={props.details.personal} />
       <Work update={worksUpdate} delete={worksDelete} />
       <Edu update={eduUpdate} delete={eduDelete} />
+      <Projects update={projectsUpdate} delete={projectDelete} />
+      <Skills update={updateSkills} details={props.details.skills}/>
     </div>
   );
 }

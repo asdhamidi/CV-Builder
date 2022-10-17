@@ -4,12 +4,14 @@ import uniqid from "uniqid";
 
 export default function Edu(props) {
   return (
-    <div className="detailsView">
-      {props.length >= 0 && <h1 className="heading">Education</h1>}
-      {props.details.map((f) => (
-        <EduComponent details={f} key={uniqid()} />
-      ))}
-    </div>
+    props.details.length > 0 && (
+      <div className="detailsView">
+        <h1 className="heading">Education</h1>
+        {props.details.map((f) => (
+          <EduComponent details={f} key={uniqid()} />
+        ))}
+      </div>
+    )
   );
 }
 

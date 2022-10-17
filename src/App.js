@@ -16,6 +16,13 @@ export default function App() {
     },
     work: [],
     edu: [],
+    projects: [],
+    skills: {
+      languages: "",
+      tools: "",
+      libs: "",
+      other: ""
+    }
   });
 
   function update(newData) {
