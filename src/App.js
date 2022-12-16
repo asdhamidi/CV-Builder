@@ -7,12 +7,12 @@ import ColorChanger from "./components/colorChanger";
 export default function App() {
   const [data, setData] = useState({
     personal: {
-      name: "Name Surname",
-      shortIntro: "Short Intro",
-      phone: "+91 9876543210",
-      email: "email@lmaomail.com",
-      location: "Place, BiggerPlace",
-      desc: "A longer description where you brag about your skills and sprinkle lies, as per taste.",
+      name: "Michael Scott",
+      shortIntro: "Motivated. Energetic. Popular.",
+      phone: "+1 654 3210",
+      email: "m.scott@dundermifflin.com",
+      location: "Scranton, Pennsylvania",
+      desc: "Regional Manager of the Scranton branch of Dunder Mifflin with over 10 years of experience in sales and leading the branch.",
     },
     work: [],
     edu: [],
@@ -21,8 +21,8 @@ export default function App() {
       languages: "",
       tools: "",
       libs: "",
-      other: ""
-    }
+      other: "",
+    },
   });
 
   function update(newData) {
